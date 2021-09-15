@@ -40,8 +40,7 @@ namespace FormularzWyjazdu
             this.LeaveDate = new System.Windows.Forms.DateTimePicker();
             this.ActualDateLabel = new System.Windows.Forms.Label();
             this.NumOfDaysLabel = new System.Windows.Forms.Label();
-            this.NumOfDays = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.NumOfDays)).BeginInit();
+            this.NumOfDays = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ActualDate
@@ -150,11 +149,13 @@ namespace FormularzWyjazdu
             // 
             // NumOfDays
             // 
-            this.NumOfDays.Location = new System.Drawing.Point(188, 235);
+            this.NumOfDays.AutoSize = true;
+            this.NumOfDays.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NumOfDays.Location = new System.Drawing.Point(232, 232);
             this.NumOfDays.Name = "NumOfDays";
-            this.NumOfDays.Size = new System.Drawing.Size(120, 23);
+            this.NumOfDays.Size = new System.Drawing.Size(22, 25);
             this.NumOfDays.TabIndex = 11;
-            this.NumOfDays.ValueChanged += new System.EventHandler(this.NumOfDays_ValueChanged);
+            this.NumOfDays.Text = "0";
             // 
             // Form1
             // 
@@ -175,7 +176,6 @@ namespace FormularzWyjazdu
             this.Controls.Add(this.ActualDate);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.NumOfDays)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +194,7 @@ namespace FormularzWyjazdu
         private System.Windows.Forms.DateTimePicker LeaveDate;
         private System.Windows.Forms.Label ActualDateLabel;
         private System.Windows.Forms.Label NumOfDaysLabel;
-        private System.Windows.Forms.NumericUpDown NumOfDays;
+        private System.Windows.Forms.Label NumOfDays;
     }
 }
 

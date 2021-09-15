@@ -15,7 +15,27 @@ namespace FormularzWyjazdu
         public Form1()
         {
             InitializeComponent();
+            ActualDate.Value = DateTime.Now;
         }
 
+        private void NameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ArriveDate_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void LeaveDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumOfDays_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

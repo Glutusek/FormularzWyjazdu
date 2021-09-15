@@ -46,5 +46,12 @@ namespace FormularzWyjazdu
                 NumOfDays.Text = ((LeaveDate.Value.Date - ArriveDate.Value.Date)).Days.ToString();
             }
         }
+
+        private void CountButton_Click(object sender, EventArgs e)
+        {
+            decimal TotalPrice = (LeaveDate.Value.Date - ArriveDate.Value.Date).Days * Price.Value;
+
+            
+        }
     }
 }

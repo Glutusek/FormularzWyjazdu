@@ -41,6 +41,12 @@ namespace FormularzWyjazdu
             this.ActualDateLabel = new System.Windows.Forms.Label();
             this.NumOfDaysLabel = new System.Windows.Forms.Label();
             this.NumOfDays = new System.Windows.Forms.Label();
+            this.Price = new System.Windows.Forms.NumericUpDown();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            this.TotalPriceLabel = new System.Windows.Forms.Label();
+            this.TotalPrice = new System.Windows.Forms.Label();
+            this.CountButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.Price)).BeginInit();
             this.SuspendLayout();
             // 
             // ActualDate
@@ -141,7 +147,7 @@ namespace FormularzWyjazdu
             // 
             this.NumOfDaysLabel.AutoSize = true;
             this.NumOfDaysLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumOfDaysLabel.Location = new System.Drawing.Point(201, 202);
+            this.NumOfDaysLabel.Location = new System.Drawing.Point(198, 215);
             this.NumOfDaysLabel.Name = "NumOfDaysLabel";
             this.NumOfDaysLabel.Size = new System.Drawing.Size(90, 30);
             this.NumOfDaysLabel.TabIndex = 10;
@@ -151,17 +157,85 @@ namespace FormularzWyjazdu
             // 
             this.NumOfDays.AutoSize = true;
             this.NumOfDays.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumOfDays.Location = new System.Drawing.Point(232, 232);
+            this.NumOfDays.Location = new System.Drawing.Point(231, 245);
             this.NumOfDays.Name = "NumOfDays";
             this.NumOfDays.Size = new System.Drawing.Size(22, 25);
             this.NumOfDays.TabIndex = 11;
             this.NumOfDays.Text = "0";
+            // 
+            // Price
+            // 
+            this.Price.Location = new System.Drawing.Point(266, 308);
+            this.Price.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.Price.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(72, 23);
+            this.Price.TabIndex = 12;
+            this.Price.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PriceLabel.Location = new System.Drawing.Point(99, 301);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(161, 30);
+            this.PriceLabel.TabIndex = 13;
+            this.PriceLabel.Text = "Cena za 24h (zł)";
+            // 
+            // TotalPriceLabel
+            // 
+            this.TotalPriceLabel.AutoSize = true;
+            this.TotalPriceLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TotalPriceLabel.Location = new System.Drawing.Point(712, 158);
+            this.TotalPriceLabel.Name = "TotalPriceLabel";
+            this.TotalPriceLabel.Size = new System.Drawing.Size(96, 37);
+            this.TotalPriceLabel.TabIndex = 14;
+            this.TotalPriceLabel.Text = "Razem";
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.AutoSize = true;
+            this.TotalPrice.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TotalPrice.Location = new System.Drawing.Point(733, 215);
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.Size = new System.Drawing.Size(52, 32);
+            this.TotalPrice.TabIndex = 15;
+            this.TotalPrice.Text = "0 zł";
+            // 
+            // CountButton
+            // 
+            this.CountButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CountButton.Location = new System.Drawing.Point(198, 368);
+            this.CountButton.Name = "CountButton";
+            this.CountButton.Size = new System.Drawing.Size(75, 31);
+            this.CountButton.TabIndex = 16;
+            this.CountButton.Text = "Oblicz";
+            this.CountButton.UseVisualStyleBackColor = true;
+            this.CountButton.Click += new System.EventHandler(this.CountButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 450);
+            this.Controls.Add(this.CountButton);
+            this.Controls.Add(this.TotalPrice);
+            this.Controls.Add(this.TotalPriceLabel);
+            this.Controls.Add(this.PriceLabel);
+            this.Controls.Add(this.Price);
             this.Controls.Add(this.NumOfDays);
             this.Controls.Add(this.NumOfDaysLabel);
             this.Controls.Add(this.ActualDateLabel);
@@ -176,6 +250,7 @@ namespace FormularzWyjazdu
             this.Controls.Add(this.ActualDate);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.Price)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +270,11 @@ namespace FormularzWyjazdu
         private System.Windows.Forms.Label ActualDateLabel;
         private System.Windows.Forms.Label NumOfDaysLabel;
         private System.Windows.Forms.Label NumOfDays;
+        private System.Windows.Forms.NumericUpDown Price;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Label TotalPriceLabel;
+        private System.Windows.Forms.Label TotalPrice;
+        private System.Windows.Forms.Button CountButton;
     }
 }
 

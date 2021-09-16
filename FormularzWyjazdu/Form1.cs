@@ -51,34 +51,38 @@ namespace FormularzWyjazdu
         {
             double TotalPriceSum = (double)((LeaveDate.Value.Date - ArriveDate.Value.Date).Days * Price.Value);
 
-            int ArriveDateYear = ArriveDate.Value.Year;
-            int ArriveDateMonth = ArriveDate.Value.Month;
+            bool promotion = false;
+
             int ArriveDateDay = ArriveDate.Value.Day;
+            int ArriveDateMonth = ArriveDate.Value.Month;
+            int ArriveDateYear = ArriveDate.Value.Year;
 
-            int BornDateYear = BornDate.Value.Year;
-            int BornDateMonth = BornDate.Value.Month;
             int BornDateDay = BornDate.Value.Day;
+            int BornDateMonth = BornDate.Value.Month;
 
-            int LeaveDateYear = LeaveDate.Value.Year;
-            int LeaveDateMonth = LeaveDate.Value.Month;
             int LeaveDateDay = LeaveDate.Value.Day;
-
-            bool 
+            int LeaveDateMonth = LeaveDate.Value.Month;
+            int LeaveDateYear = LeaveDate.Value.Year;
 
             if(ArriveDateYear != LeaveDateYear)
             {
+                if(ArriveDate.Value.DayOfYear <= BornDate.Value.DayOfYear)
+                {
+                    
+                }
+                else
+                {
+                    promotion = true;
+                }
+
 
             }
 
-            if ()
-            {
-                TotalPriceSum *= 0.9;
+            
+               /* TotalPriceSum *= 0.9;
                 TotalPrice.Text = TotalPriceSum.ToString() + " zł\nPrzysługuje Ci zniżka 10% za pobyt w dniu urodzin z nami!";
-            }
-            else
-            {
-                TotalPrice.Text = TotalPriceSum.ToString() + " zł";
-            }
+            
+                TotalPrice.Text = TotalPriceSum.ToString() + " zł";*/
         }
     }
 }

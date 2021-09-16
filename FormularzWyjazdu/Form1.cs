@@ -49,9 +49,36 @@ namespace FormularzWyjazdu
 
         private void CountButton_Click(object sender, EventArgs e)
         {
-            decimal TotalPrice = (LeaveDate.Value.Date - ArriveDate.Value.Date).Days * Price.Value;
+            double TotalPriceSum = (double)((LeaveDate.Value.Date - ArriveDate.Value.Date).Days * Price.Value);
 
-            
+            int ArriveDateYear = ArriveDate.Value.Year;
+            int ArriveDateMonth = ArriveDate.Value.Month;
+            int ArriveDateDay = ArriveDate.Value.Day;
+
+            int BornDateYear = BornDate.Value.Year;
+            int BornDateMonth = BornDate.Value.Month;
+            int BornDateDay = BornDate.Value.Day;
+
+            int LeaveDateYear = LeaveDate.Value.Year;
+            int LeaveDateMonth = LeaveDate.Value.Month;
+            int LeaveDateDay = LeaveDate.Value.Day;
+
+            bool 
+
+            if(ArriveDateYear != LeaveDateYear)
+            {
+
+            }
+
+            if ()
+            {
+                TotalPriceSum *= 0.9;
+                TotalPrice.Text = TotalPriceSum.ToString() + " zł\nPrzysługuje Ci zniżka 10% za pobyt w dniu urodzin z nami!";
+            }
+            else
+            {
+                TotalPrice.Text = TotalPriceSum.ToString() + " zł";
+            }
         }
     }
 }

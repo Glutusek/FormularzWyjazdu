@@ -28,7 +28,7 @@ namespace FormularzWyjazdu
             if(LeaveDate.Value < ArriveDate.Value)
             {
                 MessageBox.Show("Ustaw poprawną datę odjazdu!");
-            } 
+            }
             else
             {
                 NumOfDays.Text = (LeaveDate.Value.Date - ArriveDate.Value.Date).Days.ToString();
@@ -64,25 +64,44 @@ namespace FormularzWyjazdu
             int LeaveDateMonth = LeaveDate.Value.Month;
             int LeaveDateYear = LeaveDate.Value.Year;
 
-            if(ArriveDateYear != LeaveDateYear)
+            if(LeaveDateYear - ArriveDateYear >= 2)
             {
-                if(ArriveDate.Value.DayOfYear <= BornDate.Value.DayOfYear)
-                {
-                    
-                }
-                else
+                promotion = true;
+            }
+            else if(ArriveDateYear != LeaveDateYear)
+            {
+                if(ArriveDateDay <= BornDateDay && ArriveDateMonth <= BornDateMonth)
                 {
                     promotion = true;
                 }
-
-
+                else if(BornDateDay <= LeaveDateDay && BornDateMonth <= LeaveDateMonth)
+                {
+                    promotion = true;
+                }
+                else {
+                    promotion = false;
+                }
+            }
+            else if(ArriveDateYear == LeaveDateYear)
+            {
+                if(ArriveDateDay <= BornDateDay && ArriveDateMonth <= BornDateMonth
+                    && BornDateDay <= LeaveDateDay && BornDateMonth <= LeaveDateMonth)
+                {
+                    promotion = true;
+                }
+                else
+                {
+                    promotion = false;
+                }
             }
 
-            
-               /* TotalPriceSum *= 0.9;
-                TotalPrice.Text = TotalPriceSum.ToString() + " zł\nPrzysługuje Ci zniżka 10% za pobyt w dniu urodzin z nami!";
-            
-                TotalPrice.Text = TotalPriceSum.ToString() + " zł";*/
+            if(promotion)
+            {
+                TotalPriceSum *= 0.9;
+                TotalPrice.Text = TotalPriceSum.ToString() + " zł\nPrzysługuje Ci\nzniżka 10%\nza pobyt\nw dniu\nTwoich urodzin\n z nami!";
+            }
+            else
+                TotalPrice.Text = TotalPriceSum.ToString() + " zł";
         }
     }
 }

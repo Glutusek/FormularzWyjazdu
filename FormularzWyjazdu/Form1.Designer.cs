@@ -77,7 +77,6 @@ namespace FormularzWyjazdu
             this.NameLabel.Size = new System.Drawing.Size(53, 30);
             this.NameLabel.TabIndex = 2;
             this.NameLabel.Text = "Imię";
-            this.NameLabel.Click += new System.EventHandler(this.NameLabel_Click);
             // 
             // BornDateLabel
             // 
